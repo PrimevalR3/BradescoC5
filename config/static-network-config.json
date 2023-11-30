@@ -1,0 +1,23 @@
+[
+  {
+    "x500Name" : "CN=Corporate, OU=Test Dept, O=R3, L=London, C=GB",
+    "cpi" : "Digital-Assets-v2"
+  },
+  {
+    "x500Name" : "CN=Valuator, OU=Test Dept, O=R3, L=London, C=GB",
+    "cpi" : "Digital-Assets-v2"
+  },
+  {
+    "x500Name" : "CN=Bank, OU=Test Dept, O=R3, L=London, C=GB",
+    "cpi" : "Digital-Assets-v2"
+  },
+  {
+    "x500Name" : "CN=Marketplace, OU=Test Dept, O=R3, L=London, C=GB",
+    "cpi" : "Digital-Assets-v2"
+  },
+  {
+    "x500Name" : "CN=NotaryRep1, OU=Test Dept, O=R3, L=London, C=GB",
+    "cpi" : "NotaryServer-v2",
+    "serviceX500Name": "CN=NotaryService, OU=Test Dept, O=R3, L=London, C=GB"
+  }
+]

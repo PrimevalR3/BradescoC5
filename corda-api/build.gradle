@@ -1,0 +1,45 @@
+
+plugins {
+    id 'org.jetbrains.kotlin.jvm'
+}
+
+sourceSets {
+    integrationTest {
+        kotlin {
+            compileClasspath += test.compileClasspath
+            runtimeClasspath += test.runtimeClasspath
+            srcDir "src/integrationTest/kotlin"
+        }
+        resources {
+            srcDir "src/integrationTest/resources"
+        }
+    }
+}
+
+configurations {
+    integrationTestCompile.extendsFrom testCompile
+    integrationTestRuntime.extendsFrom testRuntime
+}
+
+dependencies {
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion"
+
+    implementation 'com.konghq:unirest-java:3.14.2'
+    implementation 'com.fasterxml.jackson.module:jackson-module-kotlin:2.14.2'
+
+    implementation "net.corda:corda-base:${cordaApiVersion}"
+
+    testImplementation 'org.slf4j:slf4j-simple:2.0.5'
+    testImplementation "org.junit.jupiter:junit-jupiter:$junitVersion"
+    testImplementation "org.junit.jupiter:junit-jupiter-engine:$junitVersion"
+}
+
+task integrationTest(type: Test) {
+    testClassesDirs = sourceSets.integrationTest.output.classesDirs
+    classpath = sourceSets.integrationTest.runtimeClasspath
+}
+
+test {
+    useJUnitPlatform()
+}
